@@ -8,11 +8,9 @@
                 </div>
                 <div class="kind-list__item-bd" :class="{'kind-list__item-bd_show' : now==index}">
                     <div class="weui-cells" :class="{'weui-cells_show' : now==index }">
-                        <div v-for="t in item.list" :key="t.baseInfo.name" @click="naviToDetail">
-                            <!-- <navigator url="/pages/common/sxDetail/index?kx={{item.key}}&sx={{t.baseInfo.sx}}&sxName={{t.baseInfo.name}}&kxName={{item.baseInfo.name}}" class="weui-cell weui-cell_access"> -->
-                                <div class="weui-cell__bd">{{t.baseInfo.name}}</div>
-                                <div class="weui-cell__ft weui-cell__ft_in-access"></div>
-                            <!-- </navigator> -->
+                        <div v-for="t in item.list" :key="t.baseInfo.name" @click="naviToDetail(item, t)">
+                            <div class="weui-cell__bd">{{t.baseInfo.name}}</div>
+                            <div class="weui-cell__ft weui-cell__ft_in-access"></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +34,7 @@ export default {
     self = this
   },
   mounted(){
-    this.$wildRef.child('drBang2/catsBrief').on('child_added', function(snapshot, prKey) {
+    self.$wildRef.child('drBang2/catsBrief').on('child_added', function(snapshot, prKey) {
           let key = snapshot.key()
           let item = snapshot.val()
           if (key == 'kxEnd') {
@@ -51,14 +49,14 @@ export default {
     showShutypes(in_index) {
       self.now = self.now == in_index ? -1 : in_index
     },
-    naviToDetail(item){
-      // let url = '/pages/common/sxDetail/index?kx='+ item.key+ '&sx='+ t.baseInfo.sx}}&sxName={{t.baseInfo.name}}&kxName={{item.baseInfo.name}}'
+    naviToDetail(item, t){
+      let url = "/sxDetail/" + item.key + '/'+ t.baseInfo.sx + '/' + t.baseInfo.name + '/' + item.baseInfo.name
+      self.$router.push(url)
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 .cat-ist-wrap{
   padding: 10rpx;
