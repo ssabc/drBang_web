@@ -1,7 +1,7 @@
 <template>
-    <div class="itemWrap">
+    <div class="sxDetailWrap">
         <div v-for="item in sxInfo" :key="item.key" class="item">
-            <div @click="naviToTujian">
+            <div @click="naviToTujian(item)">
                 <img :src="item.bgImg" class="itemImg"/>
             </div>
             <div class="msgWrapper">
@@ -86,47 +86,51 @@ export default {
             }, self)
         }) 
     },
-    naviToTujian() {
-        // <!-- /pages/common/tujian/index?kx={{ kx }}&kxName={{kxName}}&sx={{ sx }}&sxName={{sxName}}&pm={{ item.key }}&pmName={{item.name}}&imgPath={{ item.bgImg }} -->
+    naviToTujian(item) {
+       let url = "/tujianDetail/" + self.kx + '/'+ self.sx + '/' + self.sxName + '/' + self.kxName + '/'+ item.key + '/' + item.name + '/' + encodeURIComponent(item.bgImg)
+       self.$router.push(url)
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.item{
-    width: 50%;
+.sxDetailWrap {
     color: #555;
-    font-size: 14px;
-    display: inline-flex;
-    flex-flow: column;
-    text-align: center;
-}
-.itemImg{
-    display: inline-block;
-    width: 90%;
-    height: 150rpx;
-    padding: 10px 5% 0 5%;
-}
-.msgImg{
-    width: 24px;
-    height: 20px;
-    margin-left: 4px;
-}
-.msgWrapper{
-    color: #eeeeee;
-    display: flex;
-    line-height: 20px;
-    justify-content: center;
-}
-.msgImg-dianzan{
-    width: 22px;
-    height: 19px;
-    margin: 0 4px;
-    background-size:100% 100%;
-}
-.tjText{
-    color:#62b900;
-    font-size: 10px;
+    .item{
+        width: 50%;
+        color: #555;
+        font-size: 14px;
+        display: inline-flex;
+        flex-flow: column;
+        text-align: center;
+    }
+    .itemImg{
+        display: inline-block;
+        width: 90%;
+        height: 150rpx;
+        padding: 10px 5% 0 5%;
+    }
+    .msgImg{
+        width: 24px;
+        height: 20px;
+        margin-left: 4px;
+    }
+    .msgWrapper{
+        color: #eeeeee;
+        display: flex;
+        line-height: 20px;
+        justify-content: center;
+    }
+    .msgImg-dianzan{
+        width: 22px;
+        height: 19px;
+        margin: 0 4px;
+        background-size:100% 100%;
+    }
+    .tjText{
+        color:#62b900;
+        font-size: 10px;
+    }
 }
 </style>

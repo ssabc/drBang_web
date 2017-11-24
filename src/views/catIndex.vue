@@ -38,7 +38,7 @@ export default {
           let key = snapshot.key()
           let item = snapshot.val()
           if (key == 'kxEnd') {
-             console.log(self.cats)
+            //  console.log(self.cats)
           } else {
               item['key'] = key
               self.cats.push(item)
@@ -60,7 +60,7 @@ export default {
 <style lang="less" scoped>
 .cat-ist-wrap{
   padding: 10rpx;
-
+  color: #555;
   .item{
       border: 1px solid #234233;
       background-color: #62b900;
