@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view  ref="app"/>
+    <router-view />
   </div>
 </template>
 
 <script>
 let self = null
+
 export default {
   name: 'app',
   data(){
@@ -22,7 +22,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  background-color: #3C3C3C;
+  background-color: #efefef;
   /* color: #ffffff; */
   /* margin-top: 60px; */
 }

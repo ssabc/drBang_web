@@ -4,7 +4,7 @@
         <div class="kind-list">
             <div v-for="(item,index) in cats" class="kind-list__item" :key="item.baseInfo.name">
                 <div class="weui-flex kind-list__item-hd" :class="{ 'kind-list__item-hd_show' : now==index }" @click="showShutypes(index)">
-                    <div class="weui-flex__item">{{item.baseInfo.name}}</div>
+                    <!-- <div class="weui-flex__item">{{item.baseInfo.name}}</div> -->
                 </div>
                 <div class="kind-list__item-bd" :class="{'kind-list__item-bd_show' : now==index}">
                     <div class="weui-cells" :class="{'weui-cells_show' : now==index }">

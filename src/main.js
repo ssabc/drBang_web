@@ -5,9 +5,12 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import * as wilddog from 'wilddog'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
+Vue.use(iView)
 
 var config = {
   syncURL: "https://drzwbang.wilddogio.com/" //输入节点 URL
