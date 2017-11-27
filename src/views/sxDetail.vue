@@ -132,5 +132,9 @@ export default {
         color:#62b900;
         font-size: 10px;
     }
+    img {
+        // width: 100px;
+        // height: 100px;
+    }
 }
 </style>

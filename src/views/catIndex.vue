@@ -1,22 +1,47 @@
 <template>
   <div class="cat-ist-wrap">
-    <div class="page__bd page__bd_spacing">
-        <div class="kind-list">
-            <div v-for="(item,index) in cats" class="kind-list__item" :key="item.baseInfo.name">
-                <div class="weui-flex kind-list__item-hd" :class="{ 'kind-list__item-hd_show' : now==index }" @click="showShutypes(index)">
-                    <!-- <div class="weui-flex__item">{{item.baseInfo.name}}</div> -->
-                </div>
-                <div class="kind-list__item-bd" :class="{'kind-list__item-bd_show' : now==index}">
-                    <div class="weui-cells" :class="{'weui-cells_show' : now==index }">
-                        <div v-for="t in item.list" :key="t.baseInfo.name" @click="naviToDetail(item, t)">
-                            <div class="weui-cell__bd">{{t.baseInfo.name}}</div>
-                            <div class="weui-cell__ft weui-cell__ft_in-access"></div>
-                        </div>
-                    </div>
+    <Carousel autoplay class="carousel">
+        <Carousel-item>
+            <div class="demo-carousel">1</div>
+        </Carousel-item>
+        <Carousel-item>
+            <div class="demo-carousel">2</div>
+        </Carousel-item>
+        <Carousel-item>
+            <div class="demo-carousel">3</div>
+        </Carousel-item>
+        <Carousel-item>
+            <div class="demo-carousel">4</div>
+        </Carousel-item>
+    </Carousel>
+    <Row>
+        <Col span="8" class="kind-list">
+            <div v-for="(item, index) in cats" class="kind-list__item" :key="item.baseInfo.name">
+                <div class="weui-flex kind-list__item-hd" :class="{ 'kind-list__item-hd_show' : now == index }" @click="showShutypes(index)">
+                    <div class="weui-flex__item">{{item.baseInfo.name}}</div>
                 </div>
             </div>
-        </div>
-    </div>
+        </Col>
+        <Col span="16" class="shu-wrap">
+          <!-- <div class="kind-list__item-bd" :class="{'kind-list__item-bd_show weui-cells_show' : now==index}"> -->
+            <Card v-for="t in shuArrys.list" :key="t.baseInfo.name"  style="width:350px">
+                <p slot="title" @click="naviToDetail(shuArrys, t)">
+                    <Icon type="ios-film-outline"></Icon>
+                    {{t.baseInfo.name}}
+                </p>
+                <ul>
+                    <li v-for="item in movieList">
+                        <a :href="item.url" target="_blank">{{ item.name }}</a>
+                        <span>
+                            <Icon type="ios-star" v-for="n in 4"></Icon><Icon type="ios-star" v-if="item.rate >= 9.5"></Icon><Icon type="ios-star-half" v-else></Icon>
+                            {{ item.rate }}
+                        </span>
+                    </li>
+                </ul>
+            </Card>
+          <!-- </div> -->
+        </Col>
+    </Row>
   </div>
 </template>
 
@@ -26,8 +51,19 @@ export default {
   name: 'catList',
   data(){
     return {
-      now: -1, // 当前选择的科系索引
-      cats: [] // 多肉种类
+      index:　0,
+      now: 0, // 当前选择的科系索引
+      cats: [], // 多肉种类
+      shuArrys:　[],
+      limitNum: 5,
+      limitFrom: 0,
+      movieList: [
+          {
+              name: '肖申克的救赎',
+              url: 'https://movie.douban.com/subject/1292052/',
+              rate: 9.6
+          }
+      ]
     }
   },
   created(){
@@ -43,10 +79,13 @@ export default {
               item['key'] = key
               self.cats.push(item)
           }
+          self.shuArrys = self.cats[0]
     }, self)
   },
   methods: {
     showShutypes(in_index) {
+      self.shuArrys = self.cats[in_index]
+      self.index = in_index
       self.now = self.now == in_index ? -1 : in_index
     },
     naviToDetail(item, t){
@@ -61,6 +100,7 @@ export default {
 .cat-ist-wrap{
   padding: 10rpx;
   color: #555;
+  background-color: #efefef;
   .item{
       border: 1px solid #234233;
       background-color: #62b900;
@@ -123,6 +163,28 @@ export default {
   }
   .kind-list__item-bd_show {
     height: auto;
+  }
+
+  /*走马灯*/
+  .carousel{
+    margin-bottom: 10px;
+    .demo-carousel{
+      width: 100%;
+      height: 300px;
+      background-color: #506b9e;
+      color: #ffffff;
+    }
+  }
+
+  .shu-wrap{
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .ivu-card{
+      margin-bottom: 15px;
+    }
   }
 }
 </style>

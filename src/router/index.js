@@ -5,7 +5,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/login',
+      path: '/login', // 登录
       name: 'login',
       component: resolve => require(['@/views/login'], resolve)
     },

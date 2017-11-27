@@ -5,12 +5,15 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import * as wilddog from 'wilddog'
-import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import iView from 'iview'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(iView)
+// Vue.component('Button', Button);
+// Vue.component('Row', Row);
+// Vue.component('Col', Col);
 
 var config = {
   syncURL: "https://drzwbang.wilddogio.com/" //输入节点 URL
