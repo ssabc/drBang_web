@@ -29,15 +29,9 @@
                     <Icon type="ios-film-outline"></Icon>
                     {{t.baseInfo.name}}
                 </p>
-                <ul>
-                    <li v-for="item in movieList">
-                        <a :href="item.url" target="_blank">{{ item.name }}</a>
-                        <span>
-                            <Icon type="ios-star" v-for="n in 4"></Icon><Icon type="ios-star" v-if="item.rate >= 9.5"></Icon><Icon type="ios-star-half" v-else></Icon>
-                            {{ item.rate }}
-                        </span>
-                    </li>
-                </ul>
+                <p class="desc-pm-wrap">
+                  <a v-for="name in t.list">{{ name.name }}</a>
+                </p>
             </Card>
           <!-- </div> -->
         </Col>
@@ -54,16 +48,7 @@ export default {
       index:　0,
       now: 0, // 当前选择的科系索引
       cats: [], // 多肉种类
-      shuArrys:　[],
-      limitNum: 5,
-      limitFrom: 0,
-      movieList: [
-          {
-              name: '肖申克的救赎',
-              url: 'https://movie.douban.com/subject/1292052/',
-              rate: 9.6
-          }
-      ]
+      shuArrys:　[]
     }
   },
   created(){
@@ -181,9 +166,15 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     .ivu-card{
-      margin-bottom: 15px;
+      margin: 0 15px 15px 0;
+    }
+  }
+  .desc-pm-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    a {
+      margin-right: 4px;
     }
   }
 }
