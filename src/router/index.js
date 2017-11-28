@@ -29,6 +29,11 @@ export default new Router({
           path: '/tujianDetail/:kx/:sx/:sxName/:kxName/:pm/:pmName/:imgPath',
           name: 'tujianDetail',
           component: resolve => require(['@/views/tujianDetail'], resolve)
+        },
+        {
+          path: '/articleDetail/:key',
+          name: 'articleDetail',
+          component: resolve => require(['@/views/articleDetail'], resolve)
         }
       ]
     }
