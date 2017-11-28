@@ -1,5 +1,13 @@
 <template>
     <div class="sxDetailWrap">
+        <Breadcrumb>
+            <Breadcrumb-item href="/">
+                <Icon type="ios-home-outline"></Icon> Home
+            </Breadcrumb-item>
+            <Breadcrumb-item>
+                <Icon type="social-buffer-outline"></Icon> {{kxName}}{{sxName}}
+            </Breadcrumb-item>
+        </Breadcrumb>
         <div v-for="item in sxInfo" :key="item.key" class="item">
             <div @click="naviToTujian(item)">
                 <img :src="item.bgImg" class="itemImg"/>

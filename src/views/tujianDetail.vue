@@ -1,5 +1,16 @@
 <template>
     <div class="tujianDetailWrap" :style="{'background-image': 'url(' + imgPath + ')' }">
+        <Breadcrumb>
+            <Breadcrumb-item href="/">
+                <Icon type="ios-home-outline"></Icon> Home
+            </Breadcrumb-item>
+            <Breadcrumb-item :href="'/sxDetail/'+kx+'/'+sx+'/'+sxName+'/'+kxName">
+                <Icon type="social-buffer-outline"></Icon> {{kxName}}{{sxName}}
+            </Breadcrumb-item>
+            <Breadcrumb-item>
+                <Icon type="pound"></Icon> {{pmName}}
+            </Breadcrumb-item>
+        </Breadcrumb>
         <img :src="imgPath"/>
         <div class="weui-article">
             <div class="weui-article__h1">{{ pmName }}</div>
@@ -75,6 +86,9 @@ export default {
             }, self)
         
         }) 
+    },
+    naviBack(){
+        self.router.go(-1)
     }
   }
 }

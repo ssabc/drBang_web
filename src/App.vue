@@ -16,11 +16,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  .ivu-breadcrumb{
+    background-color: #3c3c3c;
+    a, span {
+      color: #ffffff !important;
+    }
+    a:hover {
+      color: #506b9e!important;
+    }
+  }
 }
 </style>

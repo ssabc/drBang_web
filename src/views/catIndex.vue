@@ -22,10 +22,11 @@
                 </div>
             </div>
         </Col>
-        <Col span="16" class="shu-wrap">
-          <!-- <div class="kind-list__item-bd" :class="{'kind-list__item-bd_show weui-cells_show' : now==index}"> -->
-            <Card v-for="t in shuArrys.list" :key="t.baseInfo.name"  style="width:350px">
-                <p slot="title" @click="naviToDetail(shuArrys, t)">
+        <Col span="16">
+          <div class="shu-title">{{cats[index].baseInfo.name}}</div>
+          <div class="shu-wrap">
+            <Card v-for="t in cats[index].list" :key="t.baseInfo.name"  style="width:350px">
+                <p slot="title" @click="naviToDetail(cats[index], t)">
                     <Icon type="ios-film-outline"></Icon>
                     {{t.baseInfo.name}}
                 </p>
@@ -33,7 +34,7 @@
                   <a v-for="name in t.list">{{ name.name }}</a>
                 </p>
             </Card>
-          <!-- </div> -->
+          </div>
         </Col>
     </Row>
   </div>
@@ -160,7 +161,10 @@ export default {
       color: #ffffff;
     }
   }
-
+  .shu-title{
+    padding: 0 15px;
+    line-height: 40px;
+  }
   .shu-wrap{
     padding: 0 15px;
     display: flex;
