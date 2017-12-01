@@ -2,7 +2,7 @@
   <div class="top-wrap">
       <Row class="info-wrap">
         <Col span="12">
-            <span>网页题目</span>
+            <span>多肉邦</span>
             <div class="wx-img-div">
                 <img src="../assets/images/wx.png" class="wx-img" @mouseover="imgMouseFn" @mouseout="imgMouseFn"/>
                 <div v-if="isShowQR" class="wxQR-wrap">
@@ -13,7 +13,7 @@
         </Col>
         <Col span="12" class="info-wrap__rt">
             <span>欢迎您, {{userName}}</span>
-            <span>退出</span>
+            <a @click="loginOut">退出</a>
             <span>关于我们</span>
         </Col>
       </Row>
@@ -23,6 +23,8 @@
   </div>
 </template>
 <script>
+import {Cookie} from '@/script/utils'
+
 export default {
   name: 'top',
   data() {
@@ -37,8 +39,18 @@ export default {
        */
       imgMouseFn(){
         this.isShowQR = !this.isShowQR
+      },
+      /**
+       * 登出
+       */
+      loginOut(){
+          Cookie.delete('userName')
+          this.$router.push('/login')
       }
-  }
+  },
+  created(){
+    this.userName = Cookie.get("userName")
+  },
 }
 </script>
 <style lang="less" scoped>
@@ -56,7 +68,7 @@ export default {
                 justify-content: flex-end;
                 padding-right: 15px;
             }
-            span{
+            span, a{
                 margin-left: 8px;
             }
             .wx-img-div, .wx-img{

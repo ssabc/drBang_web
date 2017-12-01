@@ -22,8 +22,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  // background-color: #efefef;
   .ivu-breadcrumb{
     background-color: #3c3c3c;
+    line-height: 40px;
     a, span {
       color: #ffffff !important;
     }

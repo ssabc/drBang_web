@@ -2,21 +2,21 @@
   <div class="cat-ist-wrap">
     <Carousel v-if="isLoadFinish" autoplay class="carousel">
         <Carousel-item v-for="item in banners" :key="item.title">
-            <div class="demo-carousel" :style="{'background-image': 'url(' + item.imgPath + ')' }">
+            <div class="demo-carousel" :style="{'background-image': 'url(' + item.imgPath + ')' }" @click="naviToArticle(item)">
               <div class="banner-title">{{item.title}}</div>
             </div>
         </Carousel-item>
     </Carousel>
     <div v-if="isLoadFinish" >
-      <div class="cells-wrap"> 
-        <div class="cells-title">文章列表 </div>
+      <div class="cells-wrap bgBlack"> 
+        <div class="cells-title textWhite">文章列表 </div>
         <div class="shu-wrap">
-          <Card v-for="t in articles" :key="t.title"  style="width:350px">
+          <Card v-for="t in articles" :key="t.title" style="width:350px">
               <p @click="naviToArticle(t)">
                   <Icon type="ios-book"></Icon>
                   {{t.title}}
               </p>
-              <p class="article-desc-wrap">
+              <p class="article-desc-wrap" @click="naviToArticle(t)">
                 <img class="article-img" :src="t.imgPath" />
                 <div class="content-text">
                   <Icon type="thumbsup"></Icon><span>{{t.dianzanNum}}</span>
@@ -82,7 +82,7 @@ export default {
       // console.log(self.shuArrys)
       self.getBanners().then((banners)=>{
         self.banners = banners
-        console.log(self.banners)
+        // console.log(self.banners)
         self.getArticles().then((articles)=>{
           self.articles = articles
           // console.log(self.articles)
@@ -180,6 +180,8 @@ export default {
 <style lang="less" scoped>
 .cat-ist-wrap{
   padding: 10rpx;
+  width: 1156px;
+  margin: 0 auto;
   color: #555;
   background-color: #efefef;
   .item{
@@ -277,7 +279,7 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     .ivu-card{
-      margin: 0 15px 15px 0;
+      margin: 0 10px 10px 0;
     }
   }
   .desc-pm-wrap{
@@ -305,6 +307,12 @@ export default {
       line-height: 40px;
     }
   } 
+  .bgBlack {
+    background-color: #3c3c3c;
+  }
+  .textWhite{
+    color: #ffffff;
+  }
   
 }
 </style>

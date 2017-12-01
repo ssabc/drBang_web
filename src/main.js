@@ -8,6 +8,8 @@ import * as wilddog from 'wilddog'
 import 'iview/dist/styles/iview.css'
 import iView from 'iview'
 
+import {judgeLoginOut} from '@/script/utils'
+
 Vue.config.productionTip = false
 Vue.use(Vuex)
 Vue.use(iView)
@@ -21,6 +23,16 @@ var config = {
 wilddog.initializeApp(config);
 Vue.prototype.$wildRef = wilddog.sync().ref('/')
 
+router.beforeEach((transition, from, next)=>{
+  // 登录路径不执行
+	if(transition.path.indexOf('login') == -1){
+		// 判断缓存信息是否存在，不存在则直接跳转登录页
+		judgeLoginOut(function(){
+	    	return next({ path: '/login' });
+		})
+	}
+	next();
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -96,7 +96,7 @@ export default {
         position: relative;
         opacity:0.95;
         background-color:#3c3c3c;
-        border-radius:8px 8px 0 0;
+        // border-radius:8px 8px 0 0;
         padding: 0 10px;
     }
     .weui-cell {
