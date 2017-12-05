@@ -11,8 +11,9 @@ import iView from 'iview'
 import {judgeLoginOut} from '@/script/utils'
 
 Vue.config.productionTip = false
-Vue.use(Vuex)
 Vue.use(iView)
+
+import store from '@/store'
 // Vue.component('Button', Button);
 // Vue.component('Row', Row);
 // Vue.component('Col', Col);
@@ -33,9 +34,11 @@ router.beforeEach((transition, from, next)=>{
 	}
 	next();
 })
+
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+	el: '#app',
+	store,
   router,
   template: '<App/>',
   components: { App }

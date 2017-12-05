@@ -11,12 +11,12 @@
                 <Icon type="pound"></Icon> {{pmName}}
             </Breadcrumb-item>
         </Breadcrumb>
-        <img :src="imgPath"/>
         <div class="weui-article">
             <div class="weui-article__h1">{{ pmName }}</div>
             <div class='headPreNum'>浏览量：{{preNum || 0}}</div>
             <div class="weui-article__section">
                 <div class="weui-article__title">{{ kxName }} {{ sxName }}</div>
+                <div class="img-wrap"><img :src="imgPath"/></div>
                 <div class="weui-article__section lineTop">
                     <div class="weui-article__p" v-html="infos.desc"></div>
                 </div>
@@ -58,7 +58,7 @@ export default {
         self.sxName = options.sxName
         self.pmName = options.pmName
         self.imgPath = decodeURIComponent(options.imgPath)
-        self.path = 'drBang2/cats/' + options.kx + '/list/' + options.sx + '/list/' + options.pm
+        self.path = `drBang2/cats/${options.kx}/list/${options.sx}/list/${options.pm}`
 
         self.getTujianInfo().then(res=>{
             self.infos = res
@@ -96,11 +96,18 @@ export default {
 
 <style lang="less" scoped>
 .tujianDetailWrap{
+    // padding-top: 50%;
     color: #ffffff;
     font-size: 13px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     // padding: 0 10px 40px 10px;
+    .img-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: rgba(60,60,60,0.9);
+    }
     .scroll-wrapper{
         background-repeat: no-repeat;
         background-size: 100% 100%;

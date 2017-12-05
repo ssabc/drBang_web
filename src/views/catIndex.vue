@@ -8,7 +8,7 @@
         </Carousel-item>
     </Carousel>
     <div v-if="isLoadFinish" >
-      <div class="cells-wrap bgBlack"> 
+      <!-- <div class="cells-wrap bgBlack"> 
         <div class="cells-title textWhite">文章列表 </div>
         <div class="shu-wrap">
           <Card v-for="t in articles" :key="t.title" style="width:350px">
@@ -27,7 +27,7 @@
               </p>
           </Card>
         </div>
-      </div>
+      </div> -->
       <div class="cells-wrap"> 
         <div class="cells-title">科属分类 </div>
         <Row>
@@ -164,7 +164,13 @@ export default {
      * 跳转到属系列表页
      */
     naviToDetail(item, t){
-      let url = "/sxDetail/" + item.key + '/'+ t.baseInfo.sx + '/' + t.baseInfo.name + '/' + item.baseInfo.name
+      let url = `/sxDetail/${item.key}/${t.baseInfo.sx}/${t.baseInfo.name}/${item.baseInfo.name}`
+      self.$store.commit('SET_ShuxiInfo', {
+        kx: item.key,
+        sx: t.baseInfo.sx,
+        sxName: t.baseInfo.name,
+        kxName: item.baseInfo.name
+      })
       self.$router.push(url)
     },
     /**

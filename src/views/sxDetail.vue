@@ -47,6 +47,7 @@ export default {
   },
   created () {
     self = this
+    console.log(self.$store.getters.shuxiInfo)
     self.options = self.$route.params
     self.loadFun(self.options)
     
@@ -60,7 +61,7 @@ export default {
         self.sx = options.sx
         self.kxName = options.kxName
         self.sxName = options.sxName
-        self.path = 'drBang2/cats/' + options.kx + '/list/' + options.sx + '/list'
+        self.path = `drBang2/cats/${options.kx}/list/${options.sx}/list`
         self.getSxInfo().then(function(res){
             self.sxInfo = res
         })
@@ -95,7 +96,7 @@ export default {
         }) 
     },
     naviToTujian(item) {
-       let url = "/tujianDetail/" + self.kx + '/'+ self.sx + '/' + self.sxName + '/' + self.kxName + '/'+ item.key + '/' + item.name + '/' + encodeURIComponent(item.bgImg)
+       let url = `/tujianDetail/${self.kx}/${self.sx}/${self.sxName}/${self.kxName}/${item.key}/${item.name}/${encodeURIComponent(item.bgImg)}`
        self.$router.push(url)
     }
   }
@@ -105,6 +106,7 @@ export default {
 <style lang="less" scoped>
 .sxDetailWrap {
     color: #555;
+    background-color: #efefef;
     .item{
         width: 50%;
         color: #555;
