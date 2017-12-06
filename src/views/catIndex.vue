@@ -8,7 +8,7 @@
         </Carousel-item>
     </Carousel>
     <div v-if="isLoadFinish" >
-      <!-- <div class="cells-wrap bgBlack"> 
+      <div class="cells-wrap bgBlack"> 
         <div class="cells-title textWhite">文章列表 </div>
         <div class="shu-wrap">
           <Card v-for="t in articles" :key="t.title" style="width:350px">
@@ -27,7 +27,7 @@
               </p>
           </Card>
         </div>
-      </div> -->
+      </div>
       <div class="cells-wrap"> 
         <div class="cells-title">科属分类 </div>
         <Row>
@@ -186,8 +186,6 @@ export default {
 <style lang="less" scoped>
 .cat-ist-wrap{
   padding: 10rpx;
-  width: 1156px;
-  margin: 0 auto;
   color: #555;
   background-color: #efefef;
   .item{
@@ -261,7 +259,7 @@ export default {
       position: relative;
       width: 100%;
       height: 300px;
-      background-color: #506b9e;
+      // background-color: #506b9e;
       background-size: 100% 100%;
       color: #ffffff;
       .banner-title {
@@ -309,6 +307,7 @@ export default {
   
   .cells-wrap{
     padding: 0 15px;
+    border-radius: 20px;
     .cells-title{
       line-height: 40px;
     }

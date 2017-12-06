@@ -1,7 +1,9 @@
 <template>
   <div class="home-wrap">
     <top />
-    <router-view />
+    <div class="content-wrap">
+      <router-view />
+    </div>
     <bottom />
   </div>
 </template>
@@ -21,5 +23,8 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
+  .content-wrap {
+    width: 1156px;
+    margin: 0 auto;
+  }
 </style>

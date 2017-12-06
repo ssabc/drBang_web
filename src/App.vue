@@ -25,7 +25,9 @@ export default {
   // background-color: #efefef;
   .ivu-breadcrumb{
     background-color: #3c3c3c;
+    padding-left: 15px;
     line-height: 40px;
+    border-radius: 20px;
     a, span {
       color: #ffffff !important;
     }

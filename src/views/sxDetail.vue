@@ -105,8 +105,11 @@ export default {
 
 <style lang="less" scoped>
 .sxDetailWrap {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
     color: #555;
-    background-color: #efefef;
+    background-color: #3c3c3c;
     .item{
         width: 50%;
         color: #555;
@@ -114,12 +117,12 @@ export default {
         display: inline-flex;
         flex-flow: column;
         text-align: center;
+        padding-bottom: 10px;
     }
     .itemImg{
         display: inline-block;
-        width: 90%;
-        height: 150rpx;
-        padding: 10px 5% 0 5%;
+        width: 460px;
+        height: 340px;
     }
     .msgImg{
         width: 24px;
