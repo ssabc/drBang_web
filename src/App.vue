@@ -27,6 +27,7 @@ export default {
     padding-left: 15px;
     line-height: 40px;
     border-radius: 20px;
+    margin-bottom: 10px;
     a, span {
       color: #ffffff !important;
     }
