@@ -107,6 +107,10 @@ export default {
         display: flex;
         justify-content: center;
         background-color: rgba(60, 60, 60, 0.7);
+        img {
+            width: 460px;
+            height:340px;
+        }
     }
     .scroll-wrapper{
         background-repeat: no-repeat;

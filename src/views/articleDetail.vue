@@ -1,14 +1,14 @@
 <template>
     <div class="articleDetailWrap">
-        <Breadcrumb>
-            <Breadcrumb-item href="/">
-                <Icon type="ios-home-outline"></Icon> Home
-            </Breadcrumb-item>
-            <Breadcrumb-item>
-                <Icon type="pound"></Icon> {{info.title}}
-            </Breadcrumb-item>
-        </Breadcrumb>
         <div class="weui-article">
+            <Breadcrumb>
+                <Breadcrumb-item href="/">
+                    <Icon type="ios-home-outline"></Icon> Home
+                </Breadcrumb-item>
+                <Breadcrumb-item>
+                    <Icon type="pound"></Icon> {{info.title}}
+                </Breadcrumb-item>
+            </Breadcrumb>
             <div class='headPreNum'>浏览量：{{info.preNums || 0}}</div>
             <div class="weui-article__section">
                 <div class="weui-article__section lineTop">
@@ -51,7 +51,7 @@ export default {
     font-size: 13px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    // padding: 0 10px 40px 10px;
+    background-color: rgba(60, 60, 60, 0.7);
     .scroll-wrapper{
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -95,8 +95,6 @@ export default {
     .weui-article {
         position: relative;
         opacity:0.95;
-        background-color:#3c3c3c;
-        // border-radius:8px 8px 0 0;
         padding: 0 10px;
     }
     .weui-cell {
