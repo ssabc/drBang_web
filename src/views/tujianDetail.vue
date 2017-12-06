@@ -1,17 +1,19 @@
 <template>
-    <div class="tujianDetailWrap" :style="{'background-image': 'url(' + imgPath + ')' }">
-        <Breadcrumb>
-            <Breadcrumb-item href="/">
-                <Icon type="ios-home-outline"></Icon> Home
-            </Breadcrumb-item>
-            <Breadcrumb-item :href="'/sxDetail/'+kx+'/'+sx+'/'+sxName+'/'+kxName">
-                <Icon type="social-buffer-outline"></Icon> {{kxName}}{{sxName}}
-            </Breadcrumb-item>
-            <Breadcrumb-item>
-                <Icon type="pound"></Icon> {{pmName}}
-            </Breadcrumb-item>
-        </Breadcrumb>
+    <div class="tujianDetailWrap" >
+        <!-- :style="{'background-image': 'url(' + imgPath + ')' }" -->
+        
         <div class="weui-article">
+            <Breadcrumb>
+                <Breadcrumb-item href="/">
+                    <Icon type="ios-home-outline"></Icon> Home
+                </Breadcrumb-item>
+                <Breadcrumb-item :href="'/sxDetail/'+kx+'/'+sx+'/'+sxName+'/'+kxName">
+                    <Icon type="social-buffer-outline"></Icon> {{kxName}}{{sxName}}
+                </Breadcrumb-item>
+                <Breadcrumb-item>
+                    <Icon type="pound"></Icon> {{pmName}}
+                </Breadcrumb-item>
+            </Breadcrumb>
             <div class="weui-article__h1">{{ pmName }}</div>
             <div class='headPreNum'>浏览量：{{preNum || 0}}</div>
             <div class="weui-article__section">
@@ -96,17 +98,15 @@ export default {
 
 <style lang="less" scoped>
 .tujianDetailWrap{
-    // padding-top: 50%;
     color: #ffffff;
     font-size: 13px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    // padding: 0 10px 40px 10px;
     .img-wrap {
         width: 100%;
         display: flex;
         justify-content: center;
-        background-color: rgba(60,60,60,0.9);
+        background-color: rgba(60, 60, 60, 0.7);
     }
     .scroll-wrapper{
         background-repeat: no-repeat;
@@ -153,7 +153,7 @@ export default {
         opacity:0.95;
         background-color:#3c3c3c;
         border-radius:8px 8px 0 0;
-        padding: 0 10px;
+        padding: 0 25px 40px 25px;
     }
     .weui-cell {
         padding: 10px 0;
@@ -165,14 +165,14 @@ export default {
         background-size:100% 100%;
     }
     .upArrow{
-    position: absolute;
-    display: block;
-    background-image: url("http://oopa8ayey.bkt.clouddn.com/upPull.png");
-    width: 30px;
-    height: 24px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    z-index: 999;
+        position: absolute;
+        display: block;
+        background-image: url("http://oopa8ayey.bkt.clouddn.com/upPull.png");
+        width: 30px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        z-index: 999;
     }
     .weui-panel {
         margin-top: 0;

@@ -8,8 +8,8 @@
         </Carousel-item>
     </Carousel>
     <div v-if="isLoadFinish" >
-      <div class="cells-wrap bgBlack"> 
-        <div class="cells-title textWhite">文章列表 </div>
+      <div class="cells-wrap"> 
+        <div class="cells-title">文章列表 </div>
         <div class="shu-wrap">
           <Card v-for="t in articles" :key="t.title" style="width:350px">
               <p @click="naviToArticle(t)">
@@ -187,7 +187,7 @@ export default {
 .cat-ist-wrap{
   padding: 10rpx;
   color: #555;
-  background-color: #efefef;
+  background-color: rgba(239, 239, 239, 0.5);
   .item{
       border: 1px solid #234233;
       background-color: #62b900;
@@ -196,8 +196,6 @@ export default {
       color: #fff;
       font-size: 20px;
   }
-  /* pages/common/kxDetail/index.wxss */
-
   .weui-flex {
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -259,7 +257,6 @@ export default {
       position: relative;
       width: 100%;
       height: 300px;
-      // background-color: #506b9e;
       background-size: 100% 100%;
       color: #ffffff;
       .banner-title {
@@ -312,12 +309,5 @@ export default {
       line-height: 40px;
     }
   } 
-  .bgBlack {
-    background-color: #3c3c3c;
-  }
-  .textWhite{
-    color: #ffffff;
-  }
-  
 }
 </style>

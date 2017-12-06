@@ -109,7 +109,7 @@ export default {
     margin-bottom: 20px;
     border-radius: 20px;
     color: #555;
-    background-color: #3c3c3c;
+    background-color: rgba(60, 60, 60, 0.7);
     .item{
         width: 50%;
         color: #555;
