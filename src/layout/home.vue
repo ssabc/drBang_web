@@ -25,6 +25,6 @@ export default {
 <style lang="less" scoped>
   .content-wrap {
     width: 1156px;
-    margin: 0 auto;
+    margin: 10px auto;
   }
 </style>

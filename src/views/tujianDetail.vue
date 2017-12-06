@@ -1,7 +1,6 @@
 <template>
     <div class="tujianDetailWrap" >
         <!-- :style="{'background-image': 'url(' + imgPath + ')' }" -->
-        
         <div class="weui-article">
             <Breadcrumb>
                 <Breadcrumb-item href="/">
@@ -102,11 +101,12 @@ export default {
     font-size: 13px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    border-radius: 20px;
+    background-color: rgba(60, 60, 60, 0.7);
     .img-wrap {
         width: 100%;
         display: flex;
         justify-content: center;
-        background-color: rgba(60, 60, 60, 0.7);
         img {
             width: 460px;
             height:340px;

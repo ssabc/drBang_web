@@ -105,8 +105,6 @@ export default {
 
 <style lang="less" scoped>
 .sxDetailWrap {
-    margin-top: 20px;
-    margin-bottom: 20px;
     border-radius: 20px;
     color: #555;
     background-color: rgba(60, 60, 60, 0.7);

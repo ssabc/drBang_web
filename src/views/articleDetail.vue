@@ -52,6 +52,7 @@ export default {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-color: rgba(60, 60, 60, 0.7);
+    border-radius: 20px;
     .scroll-wrapper{
         background-repeat: no-repeat;
         background-size: 100% 100%;

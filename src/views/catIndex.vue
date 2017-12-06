@@ -185,7 +185,7 @@ export default {
 
 <style lang="less" scoped>
 .cat-ist-wrap{
-  padding: 10rpx;
+  // padding: 10px;
   color: #555;
   background-color: rgba(239, 239, 239, 0.5);
   .item{
