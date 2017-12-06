@@ -1,6 +1,6 @@
 <template>
   <div class="cat-ist-wrap">
-    <Carousel v-if="isLoadFinish" autoplay class="carousel">
+    <Carousel v-if="isLoadFinish" autoplay class="carousel hand">
         <Carousel-item v-for="item in banners" :key="item.title">
             <div class="demo-carousel" :style="{'background-image': 'url(' + item.imgPath + ')' }" @click="naviToArticle(item)">
               <div class="banner-title">{{item.title}}</div>
@@ -12,7 +12,7 @@
         <div class="cells-title">文章列表 </div>
         <div class="shu-wrap">
           <Card v-for="t in articles" :key="t.title" style="width:350px">
-              <p @click="naviToArticle(t)">
+              <p @click="naviToArticle(t)" class="hand">
                   <Icon type="ios-book"></Icon>
                   {{t.title}}
               </p>
@@ -42,7 +42,7 @@
               <div class="shu-title">{{cats[index].baseInfo.name}}</div>
               <div class="shu-wrap">
                 <Card v-for="t in cats[index].list" :key="t.baseInfo.name"  style="width:350px">
-                    <p slot="title" @click="naviToDetail(cats[index], t)">
+                    <p slot="title" @click="naviToDetail(cats[index], t)" class="hand">
                         <Icon type="briefcase"></Icon>
                         {{t.baseInfo.name}}
                     </p>

@@ -35,5 +35,8 @@ export default {
       color: #506b9e!important;
     }
   }
+  .hand:hover {
+    cursor: pointer;
+  }
 }
 </style>
