@@ -19,7 +19,7 @@ import store from '@/store'
 // Vue.component('Col', Col);
 
 var config = {
-  syncURL: "https://drzwbang.wilddogio.com/" //输入节点 URL
+  syncURL: "https://drbang.wilddogio.com/" //输入节点 URL
 };
 wilddog.initializeApp(config);
 Vue.prototype.$wildRef = wilddog.sync().ref('/')

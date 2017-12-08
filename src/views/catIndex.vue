@@ -8,7 +8,7 @@
         </Carousel-item>
     </Carousel>
     <div v-if="isLoadFinish" >
-      <div class="cells-wrap"> 
+      <!-- <div class="cells-wrap"> 
         <div class="cells-title">文章列表 </div>
         <div class="shu-wrap">
           <Card v-for="t in articles" :key="t.title" style="width:350px">
@@ -27,7 +27,7 @@
               </p>
           </Card>
         </div>
-      </div>
+      </div> -->
       <div class="cells-wrap"> 
         <div class="cells-title">科属分类 </div>
         <Row>
@@ -83,11 +83,11 @@ export default {
       self.getBanners().then((banners)=>{
         self.banners = banners
         // console.log(self.banners)
-        self.getArticles().then((articles)=>{
-          self.articles = articles
+        // self.getArticles().then((articles)=>{
+          // self.articles = articles
           // console.log(self.articles)
           self.isLoadFinish = true
-        })
+        // })
       })
     })
   },
