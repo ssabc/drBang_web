@@ -75,6 +75,8 @@ export default {
   },
   created(){
     self = this
+    // localStorage.lastname="Smith";
+    console.log(localStorage.lastname);
   },
   mounted() {
     self.getCats().then((cats)=>{

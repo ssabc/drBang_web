@@ -2,12 +2,12 @@
     <div class="login-wrap">
         <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
             <FormItem prop="user">
-                <Input type="text" v-model="formInline.user" placeholder="您的昵称">
+                <Input type="text" v-model="formInline.user" placeholder="您的昵称" v-on:keyup.enter="handleSubmit('formInline')">
                     <Icon type="ios-person-outline" slot="prepend"></Icon>
                 </Input>
             </FormItem>
             <!-- <FormItem prop="password">
-                <Input type="password" v-model="formInline.password" placeholder="Password">
+                <Input type="password" v-model="formInline.password" placeholder="Pas sword">
                     <Icon type="ios-locked-outline" slot="prepend"></Icon>
                 </Input>
             </FormItem> -->
